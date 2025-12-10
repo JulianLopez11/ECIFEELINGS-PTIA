@@ -1,13 +1,93 @@
-# ECIFEELINGS-PTIA
-Presentado por: Julian Camilo Lopez Barrero
-Proyecto de la materia principios y tecnologias de inteligencia artificial (PTIA)
+# 🧠 ECIFeelings  
+### Detección Temprana de Trastorno Depresivo mediante Inteligencia Artificial
 
-El trastorno depresivo es un trastorno mental caracterizado por la presencia persistente de síntomas emocionales, cognitivos y conductuales que afectan de manera significativa la forma en que una persona piensa, siente y actúa. Entre los síntomas más comunes se encuentran la tristeza profunda y prolongada, la pérdida de interés o placer en actividades cotidianas, alteraciones del sueño y del apetito, fatiga constante, dificultad para concentrarse, sentimientos de inutilidad o culpa excesiva, y pensamientos recurrentes de muerte o suicidio. Para que un episodio depresivo sea clínicamente significativo, estos síntomas deben mantenerse la mayor parte del día durante al menos dos semanas consecutivas.
+ECIFeelings es un proyecto académico desarrollado en el marco del curso **Principios y Tecnologías de Inteligencia Artificial (PTIA)** de la **Escuela Colombiana de Ingeniería Julio Garavito**.  
+Su objetivo principal es utilizar técnicas de **Procesamiento de Lenguaje Natural (PLN)** y **Deep Learning** para identificar patrones lingüísticos asociados a la depresión en textos provenientes de redes sociales, específicamente **X (Twitter)**.
 
-Desde el punto de vista clínico, la depresión no siempre se manifiesta de forma continua. En muchos casos, el trastorno presenta un curso episódico, donde los síntomas aparecen durante un período prolongado y luego disminuyen parcial o totalmente, dando lugar a remisiones temporales. Una persona puede experimentar pausas de varios meses, incluso de seis meses o más, sin síntomas evidentes, y posteriormente volver a presentar recaídas. Cuando los síntomas se mantienen de forma intermitente o recurrente durante un período de dos años o más, puede considerarse un trastorno depresivo persistente o una depresión recurrente, lo que incrementa el riesgo de cronificación si no se recibe tratamiento adecuado (American Psychiatric Association, 2022).
+---
 
-La detección del trastorno depresivo resulta especialmente compleja debido a que muchas personas no expresan abiertamente su malestar emocional. En lugar de ello, las señales suelen manifestarse de manera indirecta, a través de cambios en el lenguaje, la forma de comunicarse, el contenido emocional de los textos escritos, el aislamiento social o la disminución de la interacción con su entorno. En contextos digitales, como redes sociales, foros o plataformas de mensajería, estos cambios pueden reflejarse en el uso de palabras con carga emocional negativa, expresiones de desesperanza, pesimismo recurrente, referencias al cansancio extremo o a la falta de sentido de la vida (World Health Organization, 2025).
+## 📋 Descripción del Problema
 
-En este contexto, las herramientas basadas en procesamiento de lenguaje natural y aprendizaje automático ofrecen una oportunidad valiosa para apoyar la detección temprana de posibles indicios de depresión. A través del análisis longitudinal de datos textuales, es posible identificar patrones persistentes o cíclicos en el lenguaje de una persona a lo largo del tiempo, incluso cuando existen pausas prolongadas entre episodios. Este enfoque permite no solo detectar síntomas activos, sino también reconocer señales tempranas de recaída después de períodos de aparente estabilidad, contribuyendo así a una intervención más oportuna (Chancellor \& De Choudhury, 2020).
+El trastorno depresivo es uno de los principales problemas de salud pública a nivel mundial. Su detección temprana representa un desafío significativo, ya que muchas señales de alerta presentes en el lenguaje cotidiano o en la interacción social suelen pasar desapercibidas para familiares y profesionales de la salud.
 
-Es importante destacar que estas tecnologías no reemplazan el diagnóstico clínico realizado por profesionales de la salud mental, sino que actúan como sistemas de apoyo que facilitan la identificación temprana de riesgos. Su correcto uso, junto con criterios éticos y de privacidad, puede convertirse en una herramienta complementaria para la prevención, el seguimiento y la orientación temprana de personas que podrían estar atravesando un trastorno depresivo.
+Este proyecto busca abordar esta problemática mediante el **análisis automatizado de textos**, funcionando como una **herramienta de apoyo y tamizaje**, **no como un sustituto del diagnóstico clínico**.
+
+---
+
+## 🎯 Objetivos
+
+### Objetivo General
+Desarrollar un modelo basado en **PLN e Inteligencia Artificial** capaz de detectar indicios de depresión en textos escritos en español.
+
+### Meta Cuantitativa
+- Superar un **80% de precisión** en la clasificación de textos.
+
+### Enfoque Ético
+- Funcionar como una herramienta de **alerta temprana**.
+- Respetar la **privacidad de los datos**.
+- Aclarar que su rol es únicamente de **soporte**, no de diagnóstico médico.
+
+---
+
+## 🛠️ Metodología y Arquitectura
+
+El sistema se basa en una arquitectura de **Redes Neuronales Recurrentes (LSTM)**, las cuales son especialmente efectivas para procesar secuencias de texto y conservar contexto a largo plazo.
+
+### 🔄 Flujo de Trabajo
+
+1. **Adquisición de Datos**  
+   Dataset: *Spanish Tweets Suggesting Depression* (Kaggle).
+
+2. **Preprocesamiento**  
+   - Limpieza de texto  
+   - Tokenización  
+   - Lematización  
+   - Eliminación de *stopwords*
+
+3. **Representación Vectorial**  
+   Uso de **embeddings** para capturar relaciones semánticas entre palabras.
+
+4. **Detección (Modelo)**  
+   Red LSTM que analiza las secuencias y clasifica la probabilidad de riesgo de depresión.
+
+---
+
+## 💻 Tecnologías Utilizadas
+
+- **Lenguaje:** Python  
+- **Deep Learning:** TensorFlow / Keras  
+- **Procesamiento de Lenguaje Natural:** spaCy, NLTK  
+- **Cálculo Numérico:** NumPy  
+
+---
+
+## 📊 Resultados Destacados
+
+El modelo alcanzó métricas de desempeño satisfactorias, **superando el objetivo del 80% de precisión**, tras la aplicación de técnicas de **regularización** y **manejo del desbalance de datos**.
+
+### 🧪 Casos de Prueba Significativos
+
+| Tipo de Caso        | Entrada de Texto                                                                 | Resultado del Modelo | Análisis |
+|---------------------|-----------------------------------------------------------------------------------|----------------------|----------|
+| Depresión Clara     | "Ya no tengo fuerzas para levantarme de la cama, solo quiero dormir."             | Depresión (92%)      | Identificó correctamente fatiga crónica y abulia. |
+| Estado Normal       | "Hoy es un día increíble para salir a caminar con amigos."                        | No Depresión (14.8%) | Asociación correcta de términos positivos y sociales. |
+| Contexto Complejo   | "Estoy triste porque mi equipo de fútbol perdió el partido."                      | No Depresión (20.1%) | Diferenció tristeza temporal de depresión patológica. |
+
+---
+
+## 🚀 Conclusiones
+
+- **Viabilidad:** Es posible identificar patrones lingüísticos asociados a la depresión en textos en español utilizando Deep Learning con una precisión superior al 80%.
+- **Capacidad Contextual:** La arquitectura LSTM demostró ser superior a modelos más básicos, entendiendo contextos donde palabras con carga emocional negativa no implican necesariamente depresión.
+- **Limitaciones:**  
+  - Falsos positivos ante **negaciones explícitas** (ej. *"No tengo depresión"*).  
+  - Dificultades con **lenguaje figurado** (ej. *"Morí de risa"*).
+
+---
+
+## 👤 Autor
+
+**Julian Camilo Lopez Barrero**  
+Escuela Colombiana de Ingeniería Julio Garavito  
+
+📅 **Fecha:** Deciembre 2025
