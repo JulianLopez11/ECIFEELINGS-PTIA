@@ -1,88 +1,88 @@
 # 🧠 ECIFeelings  
-### Detección Temprana de Trastorno Depresivo mediante Inteligencia Artificial
+### Early Detection of Depressive Disorder using Artificial Intelligence
 
-ECIFeelings es un proyecto académico desarrollado en el marco del curso **Principios y Tecnologías de Inteligencia Artificial (PTIA)** de la **Escuela Colombiana de Ingeniería Julio Garavito**.  
-Su objetivo principal es utilizar técnicas de **Procesamiento de Lenguaje Natural (PLN)** y **Deep Learning** para identificar patrones lingüísticos asociados a la depresión en textos provenientes de redes sociales, específicamente **X (Twitter)**.
-
----
-
-## 📋 Descripción del Problema
-
-El trastorno depresivo es uno de los principales problemas de salud pública a nivel mundial. Su detección temprana representa un desafío significativo, ya que muchas señales de alerta presentes en el lenguaje cotidiano o en la interacción social suelen pasar desapercibidas para familiares y profesionales de la salud.
-
-Este proyecto busca abordar esta problemática mediante el **análisis automatizado de textos**, funcionando como una **herramienta de apoyo y tamizaje**, **no como un sustituto del diagnóstico clínico**.
+ECIFeelings is an academic project developed within the framework of the **Principles and Technologies of Artificial Intelligence (PTIA)** course at the **Julio Garavito Colombian School of Engineering**.
+Its main objective is to use **Natural Language Processing (NLP)** and **Deep Learning** techniques to identify linguistic patterns associated with depression in texts from social networks, specifically **X (Twitter)**.
 
 ---
 
-## 🎯 Objetivos
+## 📋 Problem Description
 
-### Objetivo General
-Desarrollar un modelo basado en **PLN e Inteligencia Artificial** capaz de detectar indicios de depresión en textos escritos en español.
-
-### Meta Cuantitativa
-- Superar un **80% de precisión** en la clasificación de textos.
-
-### Enfoque Ético
-- Funcionar como una herramienta de **alerta temprana**.
-- Respetar la **privacidad de los datos**.
-- Aclarar que su rol es únicamente de **soporte**, no de diagnóstico médico.
+Depressive disorder is one of the leading public health problems worldwide. Early detection presents a significant challenge, as many warning signs present in everyday language or social interaction often go unnoticed by family members and healthcare professionals.
+This project aims to address this issue through the automated analysis of texts, functioning as a support and screening tool, not as a substitute for clinical diagnosis.
 
 ---
 
-## 🛠️ Metodología y Arquitectura
 
-El sistema se basa en una arquitectura de **Redes Neuronales Recurrentes (LSTM)**, las cuales son especialmente efectivas para procesar secuencias de texto y conservar contexto a largo plazo.
+## 🎯 Objectues
 
-### 🔄 Flujo de Trabajo
+### General Objective
+Develop a model based on **NLP and Artificial Intelligence** capable of detecting signs of depression in texts written in Spanish.
 
-1. **Adquisición de Datos**  
+### Quantitative Goal
+- To exceed **80% accuracy** in text classification.
+
+### Ethical Approach
+- To function as an **early warning** tool.
+- Respect the **privacy of data**.
+- To clarify, their role is solely **support**, not medical diagnosis.
+
+---
+
+## 🛠️ Methodology and Architecture
+
+The system is based on a **Recurrent Neural Network (LSTM)** architecture, which are especially effective at processing text sequences and preserving long-term context.
+
+### 🔄 Workflow
+
+1. **Workflow**  
    Dataset: *Spanish Tweets Suggesting Depression* (Kaggle).
 
-2. **Preprocesamiento**  
-   - Limpieza de texto  
-   - Tokenización  
-   - Lematización  
-   - Eliminación de *stopwords*
+2. **Preprocessing**  
+   - Text Cleaning 
+   - Tokenization  
+   - Lemmatization  
+   - Removal of *stopwords*
 
-3. **Representación Vectorial**  
-   Uso de **embeddings** para capturar relaciones semánticas entre palabras.
+3. **Vector Representation**  
+   Use of **embeddings** to capture semantic relationships between words.
 
-4. **Detección (Modelo)**  
-   Red LSTM que analiza las secuencias y clasifica la probabilidad de riesgo de depresión.
-
----
-
-## 💻 Tecnologías Utilizadas
-
-- **Lenguaje:** Python  
-- **Deep Learning:** TensorFlow / Keras  
-- **Procesamiento de Lenguaje Natural:** spaCy, NLTK  
-- **Cálculo Numérico:** NumPy  
+4. **Detection (Model)**  
+   LSTM network that analyzes sequences and classifies the probability of depression riskón.
 
 ---
 
-## 📊 Resultados Destacados
+## 💻 Technologies Used
 
-El modelo alcanzó métricas de desempeño satisfactorias, **superando el objetivo del 80% de precisión**, tras la aplicación de técnicas de **regularización** y **manejo del desbalance de datos**.
+- **Language:** Python 
+- **Deep Learning:** TensorFlow / Keras 
+- **Natural Language Processing:** spaCy, NLTK 
+- **Numerical Calculation:** NumPy 
 
-### 🧪 Casos de Prueba Significativos
+---
+
+## 📊 Featured Results
+
+The model achieved satisfactory performance metrics, **exceeding the target of 80% accuracy**, after the application of **regularization** and **data imbalance management** techniques.
+
+### 🧪 Significant Test Cases
 
 | Tipo de Caso        | Entrada de Texto                                                                 | Resultado del Modelo | Análisis |
 |---------------------|-----------------------------------------------------------------------------------|----------------------|----------|
-| Depresión Clara     | "Ya no tengo fuerzas para levantarme de la cama, solo quiero dormir."             | Depresión (92%)      | Identificó correctamente fatiga crónica y abulia. |
-| Estado Normal       | "Hoy es un día increíble para salir a caminar con amigos."                        | No Depresión (14.8%) | Asociación correcta de términos positivos y sociales. |
-| Contexto Complejo   | "Estoy triste porque mi equipo de fútbol perdió el partido."                      | No Depresión (20.1%) | Diferenció tristeza temporal de depresión patológica. |
+| Clear Depression     | "Ya no tengo fuerzas para levantarme de la cama, solo quiero dormir."             | Depression (92%)      | He correctly identified chronic fatigue and abulia. |
+| Normal State       | "Hoy es un día increíble para salir a caminar con amigos."                        | No Depression (14.8%) | Correct association of positive and social terms. |
+| Complex Context   | "Estoy triste porque mi equipo de fútbol perdió el partido."                      | No Depression (20.1%) | He differentiated temporary sadness from pathological depression.. |
 
 ---
 
-## 🚀 Conclusiones
+## 🚀 Conclusions
 
-- **Viabilidad:** Es posible identificar patrones lingüísticos asociados a la depresión en textos en español utilizando Deep Learning con una precisión superior al 80%.
-- **Capacidad Contextual:** La arquitectura LSTM demostró ser superior a modelos más básicos, entendiendo contextos donde palabras con carga emocional negativa no implican necesariamente depresión.
-- **Limitaciones:**  
-  - Falsos positivos ante **negaciones explícitas** (ej. *"No tengo depresión"*).  
-  - Dificultades con **lenguaje figurado** (ej. *"Morí de risa"*).
-
+- **Feasibility:** It is possible to identify linguistic patterns associated with depression in Spanish texts using Deep Learning with an accuracy greater than 80%.
+- **Contextual Capacity:** The LSTM architecture proved to be superior to more basic models, understanding contexts where words with negative emotional content do not necessarily imply depression.
+- **Limitations:**  
+   - False positives in the face of **explicit denials** (e.g., *"I don't have depression"*).
+   - Difficulties with **figurative language** (e.g., *"I died laughing"*).
+     
 ---
 
 ## 👤 Autor
@@ -90,4 +90,4 @@ El modelo alcanzó métricas de desempeño satisfactorias, **superando el objeti
 **Julian Camilo Lopez Barrero**  
 Escuela Colombiana de Ingeniería Julio Garavito  
 
-📅 **Fecha:** Deciembre 2025
+📅 **Fecha:** December 2025
