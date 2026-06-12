@@ -205,6 +205,12 @@ ECIFEELINGS-PTIA/
 └── README.md                                      # This file
 ```
 
+- **Feasibility:** It is possible to identify linguistic patterns associated with depression in Spanish texts using Deep Learning with an accuracy greater than 80%.
+- **Contextual Capacity:** The LSTM architecture proved to be superior to more basic models, understanding contexts where words with negative emotional content do not necessarily imply depression.
+- **Limitations:**  
+   - False positives in the face of **explicit denials** (e.g., *"I don't have depression"*).
+   - Difficulties with **figurative language** (e.g., *"I died laughing"*).
+     
 ---
 
 ## Author
