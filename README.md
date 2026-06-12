@@ -215,9 +215,7 @@ ECIFEELINGS-PTIA/
 
 ## Author
 
-**Julian Camilo Lopez Barrero**
-Escuela Colombiana de Ingeniería Julio Garavito
-PTIA — 2025
+- [@JulianLopez11](https://github.com/JulianLopez11)
 
 ---
 
